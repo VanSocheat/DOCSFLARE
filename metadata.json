@@ -1,0 +1,6 @@
+{
+  "name": "PDF to JPG Converter",
+  "description": "A simple and secure client-side application to convert PDF documents into high-quality JPG images.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
