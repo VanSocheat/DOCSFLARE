@@ -4,8 +4,15 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
+  const repoName = process.env.GITHUB_REPOSITORY
+    ? process.env.GITHUB_REPOSITORY.split('/')[1]
+    : '';
+  const base = process.env.GITHUB_ACTIONS === 'true' && repoName
+    ? `/${repoName}/`
+    : './';
+
   return {
-    base: process.env.GITHUB_ACTIONS === 'true' ? '/DocsFlare/' : '/',
+    base,
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
